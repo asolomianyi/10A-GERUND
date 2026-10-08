@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Gerund for Kids</title>
+<style>
+:root{--bg:#fff8e7;--card:#fff;--ink:#2b2d42;--mute:#6b6f85;--a:#ff6b35;--b:#2a9d8f;--c:#6c5ce7;--ok:#2e9e5b;--bad:#e03e52;--line:#f0e2bf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1b2e;--card:#2a2942;--ink:#f3f1ff;--mute:#a9a7c4;--line:#3a3860}}
+:root[data-theme="dark"]{--bg:#1c1b2e;--card:#2a2942;--ink:#f3f1ff;--mute:#a9a7c4;--line:#3a3860}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Baloo 2","Trebuchet MS","Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:10px;padding:10px 16px}
+.bar{flex:1;height:8px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--c));transition:width .3s}
+.cnt{font-size:14px;color:var(--mute);min-width:42px;text-align:right}
+main{flex:1;overflow-y:auto;padding:8px 16px 16px;display:flex}
+.slide{display:none;margin:auto;width:100%;max-width:820px;background:var(--card);border-radius:24px;padding:26px 24px;box-shadow:0 8px 28px rgba(0,0,0,.1);animation:pop .3s}
+.slide.on{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+h1{font-size:clamp(30px,6vw,48px);margin:.2em 0;line-height:1.1}
+h2{font-size:clamp(24px,4.5vw,34px);margin:0 0 6px;color:var(--a)}
+.tr{color:var(--mute);font-size:.8em;font-weight:400}
+.big{font-size:clamp(20px,3.6vw,26px);line-height:1.4}
+.emoji{font-size:64px;text-align:center}
+.formula{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;font-size:clamp(20px,4vw,30px);margin:14px 0}
+.pill{padding:6px 16px;border-radius:999px;color:#fff;font-weight:700}
+.p1{background:var(--a)}.p2{background:var(--b)}.p3{background:var(--c)}
+.box{border-radius:16px;padding:12px 16px;margin:10px 0;border:2px dashed var(--line)}
+.box b{color:var(--c)}
+.ex{margin:8px 0}
+.ex u{text-decoration-color:var(--a);text-decoration-thickness:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.col{border-radius:18px;padding:14px;color:#fff}
+.col.g{background:var(--b)}.col.i{background:var(--c)}.col.m{background:var(--a)}
+.col h3{margin:0 0 6px;font-size:22px}
+.words{font-size:18px;line-height:1.5}
+.words span{display:inline-block;background:rgba(255,255,255,.22);border-radius:10px;padding:1px 9px;margin:2px}
+.flip{cursor:pointer;border:2px solid var(--line);border-radius:16px;padding:12px 14px;margin:8px 0;background:transparent;color:var(--ink);font:inherit;width:100%;text-align:left}
+.flip .back{display:none;color:var(--ok);margin-top:4px}
+.flip.open .back{display:block}
+.q{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:clamp(17px,3vw,21px)}
+.q .n{color:var(--mute);width:26px}
+.q .t{flex:1 1 260px}
+.q .t small{display:block;color:var(--mute);font-size:.72em}
+.opt{font:inherit;font-size:.9em;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:4px 14px;cursor:pointer}
+.opt:hover{border-color:var(--a)}
+.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.no{background:var(--bad);border-color:var(--bad);color:#fff}
+.q input{font:inherit;font-size:.9em;width:130px;border:2px solid var(--line);border-radius:12px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.q input.ok{border-color:var(--ok);background:rgba(46,158,91,.18)}
+.q input.no{border-color:var(--bad);background:rgba(224,62,82,.15)}
+.fb{width:100%;font-size:.8em;color:var(--ok);padding-left:36px;min-height:0}
+.score{margin-top:14px;font-size:22px;text-align:center}
+.btn{font:inherit;font-weight:700;border:0;border-radius:14px;padding:10px 20px;cursor:pointer;color:#fff;background:var(--a)}
+.btn.s{background:var(--b)}
+footer{display:flex;justify-content:space-between;padding:10px 16px 14px;gap:10px}
+footer .btn{min-width:110px}
+footer .btn:disabled{opacity:.35;cursor:default}
+</style>
+</head>
+<body>
+<header><div class="bar"><i id="pr"></i></div><div class="cnt" id="cn"></div></header>
+<main>
+
+<section class="slide">
+  <div class="emoji">🏊 ⚽ 📚</div>
+  <h1>The Gerund<br><span class="tr">Герундій</span></h1>
+  <p class="big">Swimming is fun! 🎉<br><span class="tr">Плавання — це весело!</span></p>
+  <p class="tr">Use → / ← or the buttons to move · Використовуй стрілки або кнопки</p>
+</section>
+
+<section class="slide">
+  <h2>What is a gerund? 🤔 <span class="tr">Що таке герундій?</span></h2>
+  <div class="big">A gerund is a verb with <b>-ing</b> that works like a <b>noun</b>.<br>
+  <span class="tr">Герундій — це дієслово з -ing, яке працює як іменник.</span></div>
+  <div class="formula"><span class="pill p1">swim</span><span>+</span><span class="pill p2">-ing</span><span>=</span><span class="pill p3">swimming 🏊</span></div>
+  <div class="box">🎭 It is a verb in a noun costume!<br><span class="tr">Це дієслово в костюмі іменника!</span></div>
+  <div class="ex">I like <u>reading</u>. <span class="tr">Я люблю читати.</span></div>
+  <div class="ex"><u>Running</u> is healthy. <span class="tr">Біг — це корисно.</span></div>
+</section>
+
+<section class="slide">
+  <h2>Where do we use it? 📍 <span class="tr">Де вживаємо?</span></h2>
+  <p class="tr">Tap a card to see the translation · Натисни на картку</p>
+  <button class="flip"><b>1. Subject</b> <span class="tr">(підмет)</span><br><u>Smoking</u> is bad for sportsmen.<div class="back">Куріння шкідливе для спортсменів.</div></button>
+  <button class="flip"><b>2. Object</b> <span class="tr">(додаток)</span><br>I like <u>swimming</u>.<div class="back">Мені подобається плавати.</div></button>
+  <button class="flip"><b>3. After a preposition</b> <span class="tr">(після прийменника)</span><br>I am tired <b>of</b> <u>running</u>.<div class="back">Я втомився бігати.</div></button>
+  <div class="box">⭐ After <b>in, on, at, of, about, for, without, before, after</b> → always <b>-ing</b>!<br><span class="tr">Після прийменників — завжди -ing!</span></div>
+</section>
+
+<section class="slide">
+  <h2>Verbs + gerund ✅ <span class="tr">Дієслова + герундій</span></h2>
+  <div class="col g"><h3>+ -ing</h3>
+    <div class="words"><span>enjoy</span><span>avoid</span><span>finish</span><span>mind</span><span>deny</span><span>suggest</span><span>practice</span><span>quit</span><span>miss</span><span>keep</span><span>risk</span></div></div>
+  <div class="ex">He <b>enjoys playing</b> football. <span class="tr">Він із задоволенням грає у футбол.</span></div>
+  <div class="ex">She <b>finished doing</b> homework. <span class="tr">Вона закінчила робити домашнє.</span></div>
+  <div class="box">💡 Trick: these verbs are about things that <b>happen</b> or <b>are happening</b>.<br><span class="tr">Ці дієслова — про дію, що вже є.</span></div>
+</section>
+
+<section class="slide">
+  <h2>Verbs + infinitive 🎯 <span class="tr">Дієслова + інфінітив</span></h2>
+  <div class="col i"><h3>+ to do</h3>
+    <div class="words"><span>want</span><span>decide</span><span>hope</span><span>plan</span><span>learn</span><span>promise</span><span>refuse</span><span>agree</span><span>manage</span><span>expect</span><span>need</span></div></div>
+  <div class="ex">I <b>want to win</b>. <span class="tr">Я хочу перемогти.</span></div>
+  <div class="ex">We <b>decided to go</b>. <span class="tr">Ми вирішили піти.</span></div>
+  <div class="box">💡 Trick: these verbs look to the <b>future</b> — a goal, a plan, a wish.<br><span class="tr">Ці дієслова дивляться в майбутнє: мета, план, бажання.</span></div>
+</section>
+
+<section class="slide">
+  <h2>Both are OK! 🤝 <span class="tr">Можна обидва!</span></h2>
+  <div class="col m"><h3>like · love · hate · prefer · start · begin</h3></div>
+  <div class="ex">I like <b>swimming</b> = I like <b>to swim</b>. <span class="tr">Я люблю плавати.</span></div>
+  <h2 style="margin-top:14px">⚠️ Different meaning! <span class="tr">Різне значення!</span></h2>
+  <button class="flip"><b>stop</b> 🛑<br>He stopped <u>running</u>. → He doesn't run now.<br>He stopped <u>to rest</u>. → He stopped in order to rest.<div class="back">Перестав бігти / Зупинився, щоб відпочити.</div></button>
+  <button class="flip"><b>remember</b> 🧠<br>I remember <u>meeting</u> him. → I met him before.<br>Remember <u>to call</u> him! → Don't forget!<div class="back">Пам'ятаю, що зустрічав / Не забудь подзвонити.</div></button>
+  <div class="box">🧠 <b>-ing = past / process</b> · <b>to + verb = future / goal</b><br><span class="tr">-ing = минуле / процес · to + verb = майбутнє / мета</span></div>
+</section>
+
+<section class="slide">
+  <h2>Exercise 1 ✏️ <span class="tr">Вправа 1: Обери правильну форму</span></h2>
+  <p class="tr">Tap the correct answer · Натисни правильну відповідь</p>
+  <div id="e1"></div>
+  <div class="score" id="s1"></div>
+  <p style="text-align:center"><button class="btn s" onclick="reset(1)">Try again 🔄</button></p>
+</section>
+
+<section class="slide">
+  <h2>Exercise 2 ✍️ <span class="tr">Вправа 2: Впиши дієслово в правильній формі</span></h2>
+  <p class="tr">Write the verb as a gerund (-ing) or infinitive (to …) · Натисни Enter або «Check»</p>
+  <div id="e2"></div>
+  <p style="text-align:center"><button class="btn" onclick="check2()">Check ✅</button> <button class="btn s" onclick="reset(2)">Try again 🔄</button></p>
+  <div class="score" id="s2"></div>
+</section>
+
+</main>
+<footer>
+  <button class="btn s" id="pv">← Back</button>
+  <button class="btn" id="nx">Next →</button>
+</footer>
+
+<script>
+var E1=[
+["I enjoy ___ football.","Я люблю грати у футбол.","playing","to play"],
+["She wants ___ a champion.","Вона хоче стати чемпіонкою.","to be","being"],
+["He finished ___ his homework.","Він закінчив робити домашнє.","doing","to do"],
+["We decided ___ to the park.","Ми вирішили піти в парк.","to go","going"],
+["They are good at ___ chess.","Вони добре грають у шахи.","playing","to play"],
+["I hope ___ the game.","Я сподіваюся виграти гру.","to win","winning"],
+["Do you mind ___ the window?","Ти не проти закрити вікно?","closing","to close"],
+["He promised ___ on time.","Він пообіцяв бути вчасно.","to be","being"],
+["She avoids ___ sweets.","Вона уникає солодкого.","eating","to eat"],
+["I'm ready ___ now.","Я готовий почати зараз.","to start","starting"]
+];
+var E2=[
+["She suggested (go) to the cinema.","Вона запропонувала піти в кіно.","going"],
+["He refused (help) us.","Він відмовився нам допомогти.","to help"],
+["I'm tired of (wait).","Я втомився чекати.","waiting"],
+["We plan (visit) London.","Ми плануємо відвідати Лондон.","to visit"],
+["Thank you for (help) me.","Дякую, що допомагаєш мені.","helping"],
+["They keep (run) every day.","Вони продовжують бігати щодня.","running"],
+["I learned (swim) last summer.","Я навчився плавати торік влітку.","to swim"],
+["He is afraid of (lose).","Він боїться програти.","losing"],
+["Stop (talk), please!","Припини розмовляти, будь ласка!","talking"],
+["She can't help (laugh).","Вона не може не сміятися.","laughing"]
+];
+var sl=[].slice.call(document.querySelectorAll('.slide')),cur=0,done1={},done2=false;
+function show(i){cur=Math.max(0,Math.min(sl.length-1,i));
+sl.forEach(function(s,k){s.classList.toggle('on',k==cur)});
+document.getElementById('pr').style.width=((cur+1)/sl.length*100)+'%';
+document.getElementById('cn').textContent=(cur+1)+' / '+sl.length;
+document.getElementById('pv').disabled=cur==0;document.getElementById('nx').disabled=cur==sl.length-1;
+document.querySelector('main').scrollTop=0}
+document.getElementById('pv').onclick=function(){show(cur-1)};
+document.getElementById('nx').onclick=function(){show(cur+1)};
+document.addEventListener('keydown',function(e){if(e.target.tagName=='INPUT'){if(e.key=='Enter')check2();return}
+if(e.key=='ArrowRight')show(cur+1);if(e.key=='ArrowLeft')show(cur-1)});
+document.querySelectorAll('.flip').forEach(function(b){b.onclick=function(){b.classList.toggle('open')}});
+function shuffle(a){return a.slice().sort(function(){return Math.random()-.5})}
+function build1(){var h='';E1.forEach(function(q,i){var o=shuffle([q[2],q[3]]);
+h+='<div class="q"><span class="n">'+(i+1)+'.</span><span class="t">'+q[0]+'<small>'+q[1]+'</small></span>'+
+o.map(function(x){return '<button class="opt" data-i="'+i+'" data-a="'+x+'">'+x+'</button>'}).join('')+'</div>'});
+document.getElementById('e1').innerHTML=h;done1={};
+document.getElementById('s1').textContent='';
+document.querySelectorAll('#e1 .opt').forEach(function(b){b.onclick=function(){
+var i=+b.dataset.i;if(done1[i]!==undefined)return;var ok=b.dataset.a==E1[i][2];done1[i]=ok;
+b.classList.add(ok?'ok':'no');
+if(!ok)document.querySelectorAll('#e1 .opt[data-i="'+i+'"]').forEach(function(x){if(x.dataset.a==E1[i][2])x.classList.add('ok')});
+var n=Object.keys(done1).length;
+if(n==10){var s=Object.values(done1).filter(Boolean).length;
+document.getElementById('s1').textContent=s+' / 10 '+(s==10?'🏆 Perfect! Чудово!':s>=7?'🎉 Great job! Молодець!':'💪 Keep practicing! Тренуйся ще!')}}})}
+function build2(){var h='';E2.forEach(function(q,i){
+h+='<div class="q"><span class="n">'+(i+1)+'.</span><span class="t">'+q[0]+'<small>'+q[1]+'</small></span><input id="i'+i+'" autocomplete="off" autocapitalize="off" spellcheck="false"></div>'});
+document.getElementById('e2').innerHTML=h;document.getElementById('s2').textContent=''}
+function check2(){var s=0;E2.forEach(function(q,i){var el=document.getElementById('i'+i);
+var v=el.value.trim().toLowerCase().replace(/\s+/g,' ');var ok=v==q[2];if(ok)s++;
+el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');el.title=ok?'':'→ '+q[2];
+if(!ok&&v)el.placeholder='';});
+document.getElementById('s2').textContent=s+' / 10 '+(s==10?'🏆 Perfect! Чудово!':s>=7?'🎉 Great job! Молодець!':'💪 Check red answers (hover/tap) · Спробуй ще!')}
+function reset(n){n==1?build1():build2()}
+build1();build2();show(0);
+</script>
+</body>
+</html>
